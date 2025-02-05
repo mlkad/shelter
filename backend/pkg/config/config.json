@@ -1,0 +1,7 @@
+{
+  "Host": "localhost",
+  "Port": "8081",
+  "Driver": "postgres",
+  "DSN": "user=postgres password=522057 dbname=shelter host=localhost port=5433 sslmode=disable",
+  "Database": "internal/migrations/tables.sql"
+}
