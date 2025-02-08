@@ -72,13 +72,21 @@ func (r *PetRepo) GetAllPets() ([]models.Pet, error) {
 }
 
 func (r *PetRepo) BookPet(petID int) error {
+	if r.DB == nil {
+		return fmt.Errorf("database connection is nil")
+	}
+
 	query := `UPDATE pets SET is_booked = true WHERE id = $1 AND is_booked = false`
 	result, err := r.DB.Exec(query, petID)
 	if err != nil {
 		return fmt.Errorf("failed to book pet: %w", err)
 	}
 
-	rowsAffected, _ := result.RowsAffected()
+	rowsAffected, err := result.RowsAffected()
+	if err != nil {
+		return fmt.Errorf("failed to retrieve affected rows: %w", err)
+	}
+
 	if rowsAffected == 0 {
 		return fmt.Errorf("pet already booked or not found")
 	}
