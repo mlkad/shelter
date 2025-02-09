@@ -66,15 +66,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       const pet = pets[petIndex];
 
       if (pet) {
-        console.log("Pet object:", pet);
         console.log(`Отображается питомец с ID: ${pet.ID}`);
-        console.log("Pet object:", pet.ImageURL);
-        
+
+        console.log("Полный путь к изображению:", `http://localhost:8081/${pet.image_url}`);
+
         const petElement = document.createElement("div");
         petElement.classList.add("card");
         petElement.innerHTML = `
           <p class="name">${pet.Name}</p>
-          <img src = '${pet.ImageURL}'></img>
+          <img src="http://localhost:8081/uploads/${pet.image_url}" alt="Фото питомца"></img>
           <p>${pet.Description}</p>
           <p>${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
           <button class="book-btn" data-id="${pet.ID}" ${pet.is_booked ? "disabled" : ""}>
