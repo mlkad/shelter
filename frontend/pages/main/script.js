@@ -68,11 +68,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (pet) {
         console.log("Pet object:", pet);
         console.log(`Отображается питомец с ID: ${pet.ID}`);
+        console.log("Pet object:", pet.ImageURL);
         
         const petElement = document.createElement("div");
         petElement.classList.add("card");
         petElement.innerHTML = `
           <p class="name">${pet.Name}</p>
+          <img src = '${pet.ImageURL}'></img>
           <p>${pet.Description}</p>
           <p>${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
           <button class="book-btn" data-id="${pet.ID}" ${pet.is_booked ? "disabled" : ""}>
