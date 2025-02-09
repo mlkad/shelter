@@ -68,17 +68,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (pet) {
         console.log(`Отображается питомец с ID: ${pet.ID}`);
 
-        console.log("Полный путь к изображению:", `http://localhost:8081/${pet.image_url}`);
+        console.log("Полный путь к изображению:", `http://localhost:8081/backend/${pet.image_url}`);
 
         const petElement = document.createElement("div");
         petElement.classList.add("card");
         petElement.innerHTML = `
-          <p class="name">${pet.Name}</p>
-          <img src="http://localhost:8081/uploads/${pet.image_url}" alt="Фото питомца"></img>
-          <p>${pet.Description}</p>
-          <p>${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
+          <img src="http://localhost:8081/backend/${pet.image_url}" alt="Фото питомца"></img>
+          <p class="name">${pet.Name} - ${pet.is_booked ? "Booked" : "Available"}</p>
+          <p class = 'card-text'>${pet.Description}</p>
           <button class="book-btn" data-id="${pet.ID}" ${pet.is_booked ? "disabled" : ""}>
-            Забронировать
+            Book
           </button>
         `;
 
