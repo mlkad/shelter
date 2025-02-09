@@ -26,7 +26,7 @@ func (h *Handler) Router() http.Handler {
 	mux.Handle("/pets/update", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.UpdatePetDescription))))
 	mux.Handle("/pets/delete", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.DeletePet))))
 
-	mux.Handle("/pets/book/", h.AuthMiddleware(http.HandlerFunc(h.BookPet)))
+	mux.Handle("/pets/book", h.AuthMiddleware(http.HandlerFunc(h.BookPet)))
 	mux.Handle("/pets/view", h.AuthMiddleware(http.HandlerFunc(h.GetAllPets)))
 	mux.Handle("/donate", h.AuthMiddleware(http.HandlerFunc(h.CreateDonation)))
 	mux.Handle("/donate/view", h.AuthMiddleware(http.HandlerFunc(h.GetDonations)))
