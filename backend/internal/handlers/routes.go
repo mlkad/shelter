@@ -23,7 +23,8 @@ func (h *Handler) Router() http.Handler {
 	mux := http.NewServeMux()
 
 	mux.Handle("/pets", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.CreatePet))))
-	mux.Handle("/pets/update", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.UpdatePetDescription))))
+	mux.Handle("/pets/update/description", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.UpdatePetDescription))))
+	mux.Handle("/pets/update/image", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.UpdatePetDescription))))
 	mux.Handle("/pets/delete", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.DeletePet))))
 
 	mux.Handle("/pets/book", h.AuthMiddleware(http.HandlerFunc(h.BookPet)))

@@ -8,6 +8,7 @@ import (
 type Pet interface {
 	CreatePet(pet models.Pet) error
 	UpdatePetDescription(petID int, description string) error
+	UpdatePetImage(petID int, image string) error
 	DeletePet(petID int) error
 	GetAllPets() ([]models.Pet, error)
 	BookPet(petID int) error
@@ -29,6 +30,10 @@ func (s *PetService) CreatePet(pet models.Pet) error {
 
 func (s *PetService) UpdatePetDescription(petID int, description string) error {
 	return s.repo.UpdatePetDescription(petID, description)
+}
+
+func (s *PetService) UpdatePetImage(petID int, description string) error {
+	return s.repo.UpdatePetImage(petID, description)
 }
 
 func (s *PetService) DeletePet(petID int) error {

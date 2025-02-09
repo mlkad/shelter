@@ -5,4 +5,5 @@ type Pet struct {
 	Name        string `json:"Name"`
 	Description string `json:"Description"`
 	IsBooked    bool   `json:"is_booked"`
+	ImageURL    string `json:"image_url"`
 }

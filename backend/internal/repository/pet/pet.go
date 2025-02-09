@@ -19,14 +19,15 @@ func NewPetRepo(db *sql.DB) *PetRepo {
 type Pet interface {
 	CreatePet(user models.Pet) error
 	UpdatePetDescription(petID int, description string) error
+	UpdatePetImage(petID int, image string) error
 	DeletePet(petID int) error
 	GetAllPets() ([]models.Pet, error)
 	BookPet(petID int) error
 }
 
 func (r *PetRepo) CreatePet(pet models.Pet) error {
-	query := `INSERT INTO pets (name, description) VALUES ($1, $2)`
-	_, err := r.DB.Exec(query, pet.Name, pet.Description)
+	query := `INSERT INTO pets (name, description, image_url) VALUES ($1, $2, $3)`
+	_, err := r.DB.Exec(query, pet.Name, pet.Description, pet.ImageURL)
 	if err != nil {
 		return fmt.Errorf("failed to create pet: %w", err)
 	}
@@ -42,6 +43,14 @@ func (r *PetRepo) UpdatePetDescription(petID int, description string) error {
 	return nil
 }
 
+func (r *PetRepo) UpdatePetImage(petID int, image string) error {
+	query := `UPDATE pets SET image_url = $1 WHERE id = $2`
+	_, err := r.DB.Exec(query, image, petID)
+	if err != nil {
+		return fmt.Errorf("failed to update pet image: %w", err)
+	}
+	return nil
+}
 func (r *PetRepo) DeletePet(petID int) error {
 	query := `DELETE FROM pets WHERE id = $1`
 	_, err := r.DB.Exec(query, petID)
@@ -52,7 +61,7 @@ func (r *PetRepo) DeletePet(petID int) error {
 }
 
 func (r *PetRepo) GetAllPets() ([]models.Pet, error) {
-	query := `SELECT id, name, description, is_booked FROM pets`
+	query := `SELECT id, name, description, is_booked, image_url FROM pets`
 	rows, err := r.DB.Query(query)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch pets: %w", err)
@@ -62,7 +71,7 @@ func (r *PetRepo) GetAllPets() ([]models.Pet, error) {
 	var pets []models.Pet
 	for rows.Next() {
 		var pet models.Pet
-		if err := rows.Scan(&pet.ID, &pet.Name, &pet.Description, &pet.IsBooked); err != nil {
+		if err := rows.Scan(&pet.ID, &pet.Name, &pet.Description, &pet.IsBooked, &pet.ImageURL); err != nil {
 			return nil, fmt.Errorf("failed to scan pet: %w", err)
 		}
 		pets = append(pets, pet)
@@ -72,21 +81,13 @@ func (r *PetRepo) GetAllPets() ([]models.Pet, error) {
 }
 
 func (r *PetRepo) BookPet(petID int) error {
-	if r.DB == nil {
-		return fmt.Errorf("database connection is nil")
-	}
-
 	query := `UPDATE pets SET is_booked = true WHERE id = $1 AND is_booked = false`
 	result, err := r.DB.Exec(query, petID)
 	if err != nil {
 		return fmt.Errorf("failed to book pet: %w", err)
 	}
 
-	rowsAffected, err := result.RowsAffected()
-	if err != nil {
-		return fmt.Errorf("failed to retrieve affected rows: %w", err)
-	}
-
+	rowsAffected, _ := result.RowsAffected()
 	if rowsAffected == 0 {
 		return fmt.Errorf("pet already booked or not found")
 	}
