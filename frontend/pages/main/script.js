@@ -20,7 +20,7 @@ async function fetchPets() {
     return data;
   } catch (error) {
     console.error("Ошибка при загрузке данных:", error);
-    return []; // Возвращаем пустой массив, чтобы избежать ошибок
+    return []; 
   }
 }
 
@@ -29,28 +29,24 @@ async function bookPet(petId) {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6Im1sa2FkdXNtYSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczOTEzMDkwNSwiaXNzIjoic2hlbHRlci1hcHAifQ.xrRKyYvqrViy-oUW6SK26PmvsO8odU2jwuq4riKpaSI";
 
   try {
-    const response = await fetch(`http://localhost:8081/pets/book/${petId}`, {
-      method: "PATCH",
+    const response = await fetch(`http://localhost:8081/pets/book?id=${petId}`, {
+      method: "POST",
       headers: {
-        "Authorization": `Bearer ${encodeURIComponent(token)}`, // ✅ Кодируем токен
-        "Content-Type": "application/json; charset=UTF-8", // ✅ Добавляем UTF-8
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ is_booked: true }), // ✅ Корректный body
     });
 
     if (!response.ok) {
       throw new Error(`Ошибка бронирования: ${response.status}`);
     }
 
-    console.log(`Питомец с ID ${petId} забронирован!`);
-    return true;
+    return true; 
   } catch (error) {
     console.error("Ошибка при бронировании питомца:", error);
-    return false;
+    return false; 
   }
 }
-
-
 
 document.addEventListener("DOMContentLoaded", async () => {
   const pets = await fetchPets();
@@ -72,46 +68,48 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   let currentIndex = 0;
-  const visibleCount = 3; // Количество отображаемых карточек
+  const visibleCount = 3; 
 
   function renderCarousel() {
     cards.innerHTML = "";
-  
+
     for (let i = 0; i < visibleCount; i++) {
       const petIndex = (currentIndex + i) % pets.length;
       const pet = pets[petIndex];
-  
+
       if (pet) {
         const petElement = document.createElement("div");
         petElement.classList.add("card");
         petElement.innerHTML = `
           <h2>${pet.Name}</h2>
-          <p class="name">${pet.Description}</p>
+          <p class="description">${pet.Description}</p>
           <p class="status">${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
-          <button class="book-btn" data-id="${pet.ID}" ${pet.is_booked ? "disabled" : ""}>Забронировать</button>
+          <button class="book-btn" data-id="${pet.id}" ${pet.is_booked ? "disabled" : ""}>
+            Забронировать
+          </button>
         `;
+
         cards.appendChild(petElement);
       }
     }
-  
-    // Назначаем обработчики событий после рендеринга
-    document.querySelectorAll(".book-btn").forEach((btn) => {
-      btn.addEventListener("click", async (event) => {
-        const petId = event.target.dataset.id; // ✅ Получаем ID питомца
-        if (!petId) {
-          console.error("Ошибка: petId не указан!");
-          return;
-        }
-  
-        const success = await bookPet(petId);
-        if (success) {
-          event.target.disabled = true; // Блокируем кнопку
-          event.target.previousElementSibling.textContent = "Уже забронирован"; // Обновляем статус
+
+
+    document.querySelectorAll(".book-btn").forEach((button) => {
+      button.addEventListener("click", async (event) => {
+        const petId = event.target.getAttribute("data-id");
+
+        if (await bookPet(petId)) {
+    
+          const petToUpdate = pets.find((p) => p.id == petId);
+          if (petToUpdate) {
+            petToUpdate.is_booked = true;
+          }
+
+          renderCarousel(); 
         }
       });
     });
   }
-  
 
   prevArrow.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + pets.length) % pets.length;
