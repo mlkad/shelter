@@ -51,7 +51,6 @@ async function bookPet(petId) {
 document.addEventListener("DOMContentLoaded", async () => {
   const pets = await fetchPets();
 
-
   const cards = document.querySelector(".cards");
   const prevArrow = document.querySelector(".arrow1");
   const nextArrow = document.querySelector(".arrow2");
@@ -85,19 +84,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
     }
 
-
     document.querySelectorAll(".book-btn").forEach((button) => {
       button.addEventListener("click", async (event) => {
         const petId = event.target.getAttribute("data-id");
 
         if (await bookPet(petId)) {
-    
-          const petToUpdate = pets.find((p) => p.id == petId);
+          const petToUpdate = pets.find((p) => p.ID == petId); 
           if (petToUpdate) {
             petToUpdate.is_booked = true;
-          } 
+          }
 
-          renderCarousel(); 
+          renderCarousel();
         }
       });
     });
