@@ -51,21 +51,10 @@ async function bookPet(petId) {
 document.addEventListener("DOMContentLoaded", async () => {
   const pets = await fetchPets();
 
-  console.log("Данные перед рендером:", pets);
-
-  if (!pets.length) {
-    console.error("Нет данных для рендеринга");
-    return;
-  }
 
   const cards = document.querySelector(".cards");
   const prevArrow = document.querySelector(".arrow1");
   const nextArrow = document.querySelector(".arrow2");
-
-  if (!cards || !prevArrow || !nextArrow) {
-    console.error("Ошибка: Не найдены элементы с классами .cards, .arrow1, .arrow2");
-    return;
-  }
 
   let currentIndex = 0;
   const visibleCount = 3; 
@@ -78,13 +67,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       const pet = pets[petIndex];
 
       if (pet) {
+        console.log("Pet object:", pet);
+        console.log(`Отображается питомец с ID: ${pet.ID}`);
+        
         const petElement = document.createElement("div");
         petElement.classList.add("card");
         petElement.innerHTML = `
           <h2>${pet.Name}</h2>
           <p class="description">${pet.Description}</p>
           <p class="status">${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
-          <button class="book-btn" data-id="${pet.id}" ${pet.is_booked ? "disabled" : ""}>
+          <button class="book-btn" data-id="${pet.ID}" ${pet.is_booked ? "disabled" : ""}>
             Забронировать
           </button>
         `;
@@ -103,7 +95,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           const petToUpdate = pets.find((p) => p.id == petId);
           if (petToUpdate) {
             petToUpdate.is_booked = true;
-          }
+          } 
 
           renderCarousel(); 
         }
