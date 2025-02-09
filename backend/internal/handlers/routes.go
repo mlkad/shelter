@@ -21,11 +21,11 @@ func enableCORS(next http.Handler) http.Handler {
 
 func (h *Handler) Router() http.Handler {
 	mux := http.NewServeMux()
-	mux.Handle("/uploads/", http.StripPrefix("/uploads/", http.FileServer(http.Dir("uploads"))))
 	mux.Handle("/pets", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.CreatePet))))
 	mux.Handle("/pets/update/description", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.UpdatePetDescription))))
 	mux.Handle("/pets/update/image", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.UpdatePetDescription))))
 	mux.Handle("/pets/delete", h.AuthMiddleware(h.RoleMiddleware("admin")(http.HandlerFunc(h.DeletePet))))
+	mux.Handle("/backend/uploads/", http.StripPrefix("/backend/uploads/", http.FileServer(http.Dir("/Users/malika/shelter/backend/uploads"))))
 
 	mux.Handle("/pets/book", h.AuthMiddleware(http.HandlerFunc(h.BookPet)))
 	mux.Handle("/pets/view", h.AuthMiddleware(http.HandlerFunc(h.GetAllPets)))

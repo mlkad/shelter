@@ -29,7 +29,7 @@ func (h *Handler) CreatePet(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 
-	filePath := "uploads/" + handler.Filename
+	filePath := "./uploads/" + handler.Filename
 	outFile, err := os.Create(filePath)
 	if err != nil {
 		log.Fatal(err)
