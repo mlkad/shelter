@@ -32,9 +32,11 @@ func (h *Handler) CreatePet(w http.ResponseWriter, r *http.Request) {
 	filePath := "uploads/" + handler.Filename
 	outFile, err := os.Create(filePath)
 	if err != nil {
+		log.Fatal(err)
 		http.Error(w, "Failed to save image", http.StatusInternalServerError)
 		return
 	}
+
 	defer outFile.Close()
 
 	if _, err := io.Copy(outFile, file); err != nil {
