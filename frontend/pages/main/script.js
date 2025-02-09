@@ -72,9 +72,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const petElement = document.createElement("div");
         petElement.classList.add("card");
         petElement.innerHTML = `
-          <h2>${pet.Name}</h2>
-          <p class="description">${pet.Description}</p>
-          <p class="status">${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
+          <p class="name">${pet.Name}</p>
+          <p>${pet.Description}</p>
+          <p>${pet.is_booked ? "Уже забронирован" : "Доступен для брони"}</p>
           <button class="book-btn" data-id="${pet.ID}" ${pet.is_booked ? "disabled" : ""}>
             Забронировать
           </button>

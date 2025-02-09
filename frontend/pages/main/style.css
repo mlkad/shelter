@@ -31,6 +31,22 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+.card {
+  width: 270px;
+  height: 435px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.card button:disabled {
+  border: 2px solid rgb(199, 199, 199) !important;
+  background-color: rgb(199, 199, 199) !important;
+  cursor: not-allowed;
+}
 
 ul {
   list-style: none;
@@ -38,6 +54,47 @@ ul {
 
 .burger {
   display: none;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: Georgia;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 45.5px */
+  letter-spacing: 2.1px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: #000;
+
+  /* h5 */
+  font-family: Georgia;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 17px !important;
+  /* 16.5px */
+  letter-spacing: 0.9px !important;
+}
+
+h4 {
+  margin-top: 10px !important;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: Georgia;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  letter-spacing: 1.2px;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -112,7 +169,6 @@ ul {
 
   .about-content {
     gap: 110px;
-
     position: relative;
     display: flex;
     max-width: 100%;
@@ -220,10 +276,15 @@ ul {
   }
 
   .card {
+    padding: 40px;
     width: 270px;
     height: 435px;
-    padding: 0 !important;
-    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
   }
 
   .button-primary {
@@ -745,7 +806,6 @@ ul {
     background: var(--color-light-s, #FAFAFA);
     border-radius: 9px;
     gap: 30px;
-    position: relative !important;
   }
 
   .card img {
@@ -783,9 +843,7 @@ ul {
     /* 22.1px */
     letter-spacing: 1.02px;
     border-radius: 100px;
-    border: 2px solid #F1CDB3;
-    position: absolute !important;
-    bottom: 0 !important;
+    border: 2px solid #F1CDB3
   }
 
   .slider {
@@ -796,7 +854,7 @@ ul {
   }
 
   .cards {
-    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
