@@ -41,6 +41,9 @@
                     <li class="menu-item">
                         <a href="#footer" class="menu-link">Contacts</a>
                     </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link login">Login</a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -232,22 +235,23 @@
         <button >X</button>
     </div>
     <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-jennifer.png" alt="">
+        <div class="tabs">
+            <button class="tab active" data-tab="login">Вход</button>
+            <button class="tab" data-tab="register">Регистрация</button>
         </div>
-        <div class="popup-text">
-            <h3>Jennifer</h3>
-            <h4>Dog - Labrador</h4>
-            <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This
-                girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm
-                in the house if she has all of her favorite toys.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 2 months</a></li>
-                <li><a><strong>Inoculations:</strong> none</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
+        <form id="loginForm" class="form active">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+
+        <!-- Форма Регистрации -->
+        <form id="registerForm" class="form">
+            <input type="text" placeholder="Имя" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Пароль" required>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
     </div>
 </div>
 
@@ -405,6 +409,8 @@
     </div>
 </div>
 </div> -->
+<script defer src = 'auth.js'></script>
 <script defer src = 'script.js'></script>
+<script defer src = 'menu.js'></script>
 </body>
 </html>

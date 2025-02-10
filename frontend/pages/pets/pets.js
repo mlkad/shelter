@@ -1,9 +1,9 @@
 const token =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJ1c2VybmFtZSI6Im1sa2FkdXMiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MzkyMzI2NTAsImlzcyI6InNoZWx0ZXItYXBwIn0.KjKI8CTk51flJYrmkWGTuvCX7euNma_XsaVXAn7z5vY";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6Im1hbGlrYSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczOTI3MjMyNCwiaXNzIjoic2hlbHRlci1hcHAifQ.dBWxGA2LUayP7KRphu7oSX9h5pJmPf2m-BAFhFyjNKE";
 
 async function fetchPets() {
 
-  try {
+  try { 
     const response = await fetch("http://localhost:8081/pets/view", {
       method: "GET",
       headers: {
@@ -21,32 +21,29 @@ async function fetchPets() {
     return data;
   } catch (error) {
     console.error("Ошибка при загрузке данных:", error);
-    return [];
+    return []; 
   }
 }
 
 async function bookPet(petId) {
 
   try {
-    const response = await fetch(
-      `http://localhost:8081/pets/book?id=${petId}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await fetch(`http://localhost:8081/pets/book?id=${petId}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`Ошибка бронирования: ${response.status}`);
     }
 
-    return true;
+    return true; 
   } catch (error) {
     console.error("Ошибка при бронировании питомца:", error);
-    return false;
+    return false; 
   }
 }
 

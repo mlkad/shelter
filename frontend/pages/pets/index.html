@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <header class='header'>
         <div class="container">
             <div class="header-top">
@@ -35,13 +35,16 @@
                             <a href="../main/index.html" class="menu-link">About the shelter</a>
                         </li>
                         <li class="menu-item">
-                            <a href = '../pets/index.html' class="menu-link-our">Our pets</p>
+                            <a href='../pets/index.html' class="menu-link-our">Our pets</p>
                         </li>
                         <li class="menu-item">
                             <a href="../main/index.html#help" class="menu-link">Help the shelter</a>
                         </li>
                         <li class="menu-item">
                             <a href="#footer" class="menu-link">Contacts</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link login">Login</a>
                         </li>
                     </ul>
                 </nav>
@@ -98,186 +101,35 @@
     </footer>
 
 
-    <div class="popup" id="jennifer">
+    <div class="popup" id="popup">
         <div class="popup-close">
             <button >X</button>
         </div>
         <div class="popup-body">
-            <div class="popup-image">
-                <img src="../../assets/images/pets-jennifer.png" alt="">
+            <div class="tabs">
+                <button class="tab active" data-tab="login">Вход</button>
+                <button class="tab" data-tab="register">Регистрация</button>
             </div>
-            <div class="popup-text">
-                <h3>Jennifer</h3>
-                <h4>Dog - Labrador</h4>
-                <p>Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home. This
-                    girl really enjoys being able to go outside to run and play, but won't hesitate to play up a storm
-                    in the house if she has all of her favorite toys.</p>
-                <ul class="popup-list">
-                    <li><a><strong>Age:</strong> 2 months</a></li>
-                    <li><a><strong>Inoculations:</strong> none</a></li>
-                    <li><a><strong>Diseases:</strong> none</a></li>
-                    <li><a><strong>Parasites:</strong> none</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-<!-- 
-
-    <div class="popup" id="katrine">
-        <div class="popup-close">
-            <button >X</button>
-        </div>
-        <div class="popup-body">
-            <div class="popup-image">
-                <img src="../../assets/images/pets-katrine.png" alt="">
-            </div>
-            <div class="popup-text">
-                <h3>Katrine</h3>
-                <h4>Cat - British Shorthair</h4>
-                <p>Katrine is a gentle 6 months old British Shorthair with a calm and loving personality. She loves curling up in cozy spots and will happily keep you company during quiet evenings.</p>
-                <ul class="popup-list">
-                    <li><a><strong>Age:</strong> 6 months</a></li>
-                    <li><a><strong>Inoculations:</strong> up to date</a></li>
-                    <li><a><strong>Diseases:</strong> none</a></li>
-                    <li><a><strong>Parasites:</strong> none</a></li>
-                </ul>
-            </div>
+            <form id="loginForm" class="form active">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+    
+            <!-- Форма Регистрации -->
+            <form id="registerForm" class="form">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
         </div>
     </div>
     
-<div class="popup" id="woody">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-woody.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Woody</h3>
-            <h4>Dog - Golden Retriever</h4>
-            <p>Woody is a friendly 1-year-old Golden Retriever with a playful spirit and a heart full of love. He enjoys long walks and never says no to a good belly rub.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 1 year</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
 
-<div class="popup" id="sophia">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-sophia.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Sophia</h3>
-            <h4>Dog - Shih Tzu</h4>
-            <p>Sophia is a cuddly 4-month-old Shih Tzu with a playful and curious nature. She enjoys being carried around and loves snuggling up on your lap.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 4 months</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="timmy">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-timmy.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Timmy</h3>
-            <h4>Cat - British Shorthair</h4>
-            <p>Timmy is a relaxed 8-month-old British Shorthair who loves lounging in the sun and watching the world go by. He is perfect for anyone looking for a calm and easygoing companion.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 8 months</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="charly">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-charly.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Charly</h3>
-            <h4>Dog - Beagle</h4>
-            <p>Charly is a curious 2-year-old Beagle who loves exploring and sniffing out new adventures. With his energetic personality, he's always ready for a long walk or a play session.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 2 years</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="scarlett">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-scarlet.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Scarlett</h3>
-            <h4>Dog - Jack Russell Terrier</h4>
-            <p>Scarlett is an energetic 5-month-old Jack Russell Terrier who loves running and playing. She would thrive in an active household where she can burn off all her energy.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 5 months</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="freddie">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-freddie.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Freddie</h3>
-            <h4>Cat - Scottish Fold</h4>
-            <p>Freddie is a playful 7-month-old Scottish Fold with a love for exploring every corner of the house. His cute folded ears and inquisitive nature make him a delight to be around.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 7 months</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div> -->
-<script defer src='menu.js'></script>
-<script defer src='pets.js'></script>
+    <script defer src = 'auth.js'></script>
+    <script src='pets.js'></script>
+    <script src='menu.js'></script>
 </body>
 
 </html>

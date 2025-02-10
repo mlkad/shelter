@@ -47,7 +47,9 @@ button {
   gap: 12px;
   background: var(--color-light-s, #FAFAFA);
   border-radius: 9px;
+  position: relative;
 }
+
 .card button {
   position: absolute;
   bottom: 10px;
@@ -154,6 +156,69 @@ h4 {
   font-weight: 400;
   line-height: 115%;
   letter-spacing: 1.2px;
+}
+
+.tabs {
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.tab.active {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
+.form {
+  margin: 0 auto;
+  width: 500px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 50px;
+}
+
+.form input {
+  height: 25px;
+}
+
+.form.active {
+  display: flex;
+}
+
+.popup {
+
+  flex-direction: column !important;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50.6%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 952px;
+  height: 552px;
+}
+
+.popup-body {
+  flex-direction: column;
+  justify-content: space-evenly !important;
+  border-radius: 9px;
+  background: #FAFAFA !important;
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  height: 500px;
+  flex-shrink: 0;
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -2046,16 +2111,6 @@ body.with-popup::before {
   /* Behind the popup */
 }
 
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50.6%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  width: 952px;
-  height: 552px;
-}
 
 .popup-close {
   display: flex;
@@ -2085,17 +2140,7 @@ body.with-popup::before {
 
 
 
-.popup-body {
-  padding: 0 !important;
-  border-radius: 9px;
-  background: #FAFAFA !important;
-  gap: 30px;
-  display: flex;
-  flex-direction: row;
-  width: 900px;
-  height: 500px;
-  flex-shrink: 0;
-}
+
 
 .popup-image img {
   border-radius: 9px;

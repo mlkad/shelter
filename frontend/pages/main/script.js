@@ -1,6 +1,8 @@
+// const token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6Im1hbGlrYSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczOTI3MjMyNCwiaXNzIjoic2hlbHRlci1hcHAifQ.dBWxGA2LUayP7KRphu7oSX9h5pJmPf2m-BAFhFyjNKE";
+
 async function fetchPets() {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo1LCJ1c2VybmFtZSI6Im1sa2FkdXMiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3MzkyMzE1NzIsImlzcyI6InNoZWx0ZXItYXBwIn0.Mz_al4hJ5-G7ItKqV_6Y4IVRKnBqx7PLprQkcYraqDY";
+  const token = localStorage.getItem("token"); // Получаем токен
 
   try { 
     const response = await fetch("http://localhost:8081/pets/view", {
@@ -25,9 +27,7 @@ async function fetchPets() {
 }
 
 async function bookPet(petId) {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6Im1sa2FkdXNtYSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczOTEzMDkwNSwiaXNzIjoic2hlbHRlci1hcHAifQ.xrRKyYvqrViy-oUW6SK26PmvsO8odU2jwuq4riKpaSI";
-
+  const token = localStorage.getItem("token"); 
   try {
     const response = await fetch(`http://localhost:8081/pets/book?id=${petId}`, {
       method: "POST",
