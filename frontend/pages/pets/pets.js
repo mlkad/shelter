@@ -1,8 +1,8 @@
-const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6Im1hbGlrYSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczOTI3MjMyNCwiaXNzIjoic2hlbHRlci1hcHAifQ.dBWxGA2LUayP7KRphu7oSX9h5pJmPf2m-BAFhFyjNKE";
+// const token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6Im1hbGlrYSIsInJvbGUiOiJhZG1pbiIsImV4cCI6MTczOTI3MjMyNCwiaXNzIjoic2hlbHRlci1hcHAifQ.dBWxGA2LUayP7KRphu7oSX9h5pJmPf2m-BAFhFyjNKE";
 
 async function fetchPets() {
-
+  const token = localStorage.getItem("token"); 
   try { 
     const response = await fetch("http://localhost:8081/pets/view", {
       method: "GET",
