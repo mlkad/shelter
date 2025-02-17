@@ -1,416 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-   <link href="../../assets/images/favicon.ico" rel="icon" type="image/x-icon">
-   <!-- ФАВИКОН БУДЕТ ОТОБРАЖАТЬСЯ В ГУГЛ ХРОМ -->
+    <link href="../../assets/images/favicon.ico" rel="icon" type="image/x-icon">
+    <!-- ФАВИКОН БУДЕТ ОТОБРАЖАТЬСЯ В ГУГЛ ХРОМ -->
     <title>Main</title>
 </head>
+
 <body>
 
-<header class ='header'>
-    <div class="container">
-        <div class="header-top" id = "header-top">
-            <div class="logo">
-                <a href="index.html" class="logo-link">
-                    <p class="cozy">Cozy House</p>
-                    <h1 class="boston">Shelter for pets in Boston</h1>
+    <header class='header'>
+        <div class="container">
+            <div class="header-top" id="header-top">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <p class="cozy">Cozy House</p>
+                        <h1 class="boston">Shelter for pets in Boston</h1>
+                    </a>
+                </div>
+
+                <div class="overlay" id="overlay"></div>
+
+                <div class="burger" id="burger">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+
+                <nav class="menu open" id="menu">
+
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="../main/index.html" class="menu-link-about">About the shelter</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../pets/index.html" class="menu-link">Our pets</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#help" class="menu-link">Help the shelter</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#footer" class="menu-link">Contacts</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link login">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="not-only">
+                <div class="not-only-text">
+                    <h2>Not only people need a house</h2>
+                    <p>We offer to give a chance to a little and
+                        nice puppy with an extremely wide and open
+                        heart. He or she will love you more
+                        than anybody else in the world, you will see!
+                    </p>
+                    <a href='#our-friends'>Make a friend</a>
+                </div>
+                <img src="../../assets/images/start-screen-puppy.png" alt="">
+            </div>
+        </div>
+
+
+
+    </header>
+
+    <div class="about">
+        <div class="about-content">
+            <div class="about-pets">
+                <img src="../../assets/images/about-pets.png" alt="">
+            </div>
+            <div class="content-1">
+                <h3>About the shelter <br>“Cozy House”</h3>
+                <p class='cur'>Currently we have 121 dogs and 342 cats
+                    on our hands and statistics show that
+                    only 20% of them will find a family.
+                    The others will continue to live with
+                    us and will be waiting for a lucky
+                    chance to become dearly loved.
+                </p>
+                <p class='we'>
+                    We feed our wards with the best food
+                    and make sure that they do not get
+                    sick, feel comfortable (including
+                    psychologically) and well. We are
+                    supported by 87 volunteers and 28
+                    employees of various skill levels.
+                    About 12% of the animals are taken by
+                    the shelter staff. Taking care of the
+                    animals, they become attached to the
+                    pets and would hardly ever leave them
+                    alone.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="our-friends" id='our-friends'>
+        <div class="pets-content">
+            <div class="heading">
+                <h3>Our friends who <br>
+                    are looking for a house
+                </h3>
+            </div>
+
+            <div class='slider'>
+                <div class='cards'>
+
+                </div>
+                <div class="arrows-container">
+                    <div class="arrow1">
+                        <img src="../../assets/images/Arrow.png" alt="">
+                    </div>
+                    <div class="arrow2">
+                        <img src="../../assets/images/Arrow2.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-primary">
+                <a href="../pets/index.html">Get to know the rest</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="help" id="help">
+        <div class="help-content">
+            <div class="heading">
+                <h3>How you can help <br>
+                    our shelter</h3>
+            </div>
+            <div class="list">
+                <div class="icon">
+                    <img src='../../assets/images/icon-pet-food.svg' alt=''>
+                    <p>Pet food</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-transportation.svg' alt=''>
+                    <p>Transportation</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-toys.svg' alt=''>
+                    <p>Toys</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-bowls-and-cups.svg' alt=''>
+                    <p>Bowls and cups</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-shampoos.svg' alt=''>
+                    <p>Shampoos</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-vitamins.svg' alt=''>
+                    <p>Vitamins</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-medicines.svg' alt=''>
+                    <p>Medicines</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-collars-leashes.svg' alt=''>
+                    <p>Collars / leashes</p>
+                </div>
+                <div class="icon">
+                    <img src='../../assets/images/icon-sleeping-area.svg' alt=''>
+                    <p>Sleeping areas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="in-addition">
+        <div class="donation-content">
+            <div class="donation-img">
+                <img src='../../assets/images/donation-dog.png' alt=''>
+            </div>
+            <div class="content-2">
+                <h3>You can also<br> make a donation</h3>
+                <p class='bank'>Name of the bank / Type of bank account</p>
+                <div class="pay-card">
+                    <img src="../../assets/images/credit-card.svg" alt="">
+                    <a>8380 2880 8028 8791 7435</a>
+                </div>
+                <p class='lorem'>Legal information and lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit. Maecenas a ipsum at
+                    libero sagittis dignissim sed ac diam. Praesent
+                    ultrices maximus tortor et vulputate. Interdum
+                    et malesuada fames ac ante ipsum primis in faucibus.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="donations-popup hidden">
+      <div class="donations-body">
+        <h3>Пожертвовать</h3>
+        <form id="donationsForm">
+          <label for="donation-amount">Сумма:</label>
+          <input type="number" id="donation-amount" name="amount" min="1" required />
+    
+          <label for="donation-message">Тип доната:</label>
+          <textarea id="donation-message" name="message"></textarea>
+    
+          <button type="submit">Отправить</button>
+          <button type="button" class="close-popup">Закрыть</button>
+        </form>
+      </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content" id='footer'>
+            <div class="contacts">
+                <h3>For questions and suggestions</h3>
+                <a href="mailto:email@shelter.com" class="icon-link">
+                    <img src="../../assets/icons/icon-email.svg" alt="">
+                    <p>email@shelter.com</p>
+                </a>
+                <a href='tel:+13674567554' class="icon-link">
+                    <img src="../../assets/icons/icon-phone.svg" alt="">
+                    <p>+13 674 567 75 54</p>
+                </a>
+            </div>
+            <div class="locations">
+                <h3>We are waiting for your visit</h3>
+                <a target="_blank"
+                    href='https://www.google.com/maps/place/Central+St,+Boston,+MA,+США/@42.3588439,-71.0555165,17z/data=!3m1!4b1!4m6!3m5!1s0x89e370865345ba21:0x44f6c81aa9436fb7!8m2!3d42.3588439!4d-71.0529416!16s%2Fg%2F1tfvj6dm?entry=ttu'
+                    class='icon-link'>
+                    <img src="../../assets/icons/icon-marker.svg" alt="">
+                    <p>1 Central Street, Boston (entrance from the store)</p>
+                </a>
+                <a target="_blank"
+                    href='https://www.google.com/maps/search/london+central+park/@49.4289566,14.7279047,4z/data=!3m1!4b1?entry=ttu'
+                    class="icon-link">
+                    <img src="../../assets/icons/icon-marker.svg" alt="">
+                    <p class='london'>18 South Park, London </p>
                 </a>
             </div>
 
-            <div class="overlay" id="overlay"></div>
-            
-            <div class="burger" id = "burger">
-                <hr><hr><hr>
-            </div>
-
-            <nav class="menu open" id = "menu">
-  
-                <ul class="menu-list">            
-                    <li class="menu-item">
-                        <a href="../main/index.html" class="menu-link-about">About the shelter</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="../pets/index.html" class="menu-link">Our pets</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#help" class="menu-link">Help the shelter</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#footer" class="menu-link">Contacts</a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" class="menu-link login">Login</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="not-only">
-            <div class="not-only-text">
-            <h2>Not only people need a house</h2>
-            <p>We offer to give a chance to a little and
-                nice puppy with an extremely wide and open
-                heart. He or she will love you more
-                than anybody else in the world, you will see!
-            </p>
-            <a href = '#our-friends'>Make a friend</a>
-        </div>
-            <img src="../../assets/images/start-screen-puppy.png" alt="">
-      </div>
-    </div>
-
-
-
-</header>
-
-<div class="about">
-  <div class="about-content">
-      <div class="about-pets">
-          <img src="../../assets/images/about-pets.png" alt="">
-      </div>
-      <div class="content-1">
-          <h3>About the shelter <br>“Cozy House”</h3>
-          <p class = 'cur'>Currently we have 121 dogs and 342 cats
-              on our hands and statistics show that
-              only 20% of them will find a family. 
-              The others will continue to live with 
-              us and will be waiting for a lucky 
-              chance to become dearly loved.
-          </p>
-          <p class = 'we'>
-            We feed our wards with the best food
-              and make sure that they do not get 
-              sick, feel comfortable (including 
-              psychologically) and well. We are 
-              supported by 87 volunteers and 28 
-              employees of various skill levels. 
-              About 12% of the animals are taken by
-              the shelter staff. Taking care of the 
-              animals, they become attached to the 
-              pets and would hardly ever leave them
-              alone.
-          </p>
-      </div>
-  </div>
-</div> 
-<div class="our-friends" id ='our-friends'>
-    <div class="pets-content">
-        <div class="heading">
-            <h3>Our friends who <br>
-                are looking for a house
-            </h3>
-        </div>
-
-        <div class = 'slider'>
-            <div class ='cards'>
-
-            </div>
-           <div class="arrows-container"> 
-            <div class="arrow1">
-                <img src="../../assets/images/Arrow.png" alt="">
-            </div>
-            <div class="arrow2">
-                <img src="../../assets/images/Arrow2.png" alt="">
+            <div class="footer-puppy">
+                <img src="../../assets/images/footer-puppy.png" alt="">
             </div>
         </div>
-        </div>
-
-        <div class="button-primary">
-            <a href="../pets/index.html">Get to know the rest</a>
-        </div>
-    </div>
-</div>
+    </footer>
 
 
-<div class="help" id = "help">
-    <div class="help-content">
-        <div class="heading">
-            <h3>How you can help <br>
-                our shelter</h3>
-        </div>
-    <div class="list">
-        <div class="icon">
-            <img src = '../../assets/images/icon-pet-food.svg' alt =''>
-            <p>Pet food</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-transportation.svg' alt =''>
-            <p>Transportation</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-toys.svg' alt =''>
-            <p>Toys</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-bowls-and-cups.svg' alt =''>
-            <p>Bowls and cups</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-shampoos.svg' alt =''>
-            <p>Shampoos</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-vitamins.svg' alt =''>
-            <p>Vitamins</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-medicines.svg' alt =''>
-            <p>Medicines</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-collars-leashes.svg' alt =''>
-            <p>Collars / leashes</p>
-        </div>
-        <div class="icon">
-            <img src = '../../assets/images/icon-sleeping-area.svg' alt =''>
-            <p>Sleeping areas</p>
-        </div>
-    </div>
-    </div>
-</div>
+    <div id="overlay"></div>
 
-
-
-<div class="in-addition">
-    <div class="donation-content">
-        <div class="donation-img">
-            <img src = '../../assets/images/donation-dog.png' alt =''>
+    <div class="popup" id="popup">
+        <div class="popup-close">
+            <button>X</button>
         </div>
-        <div class="content-2">
-            <h3>You can also<br> make a donation</h3>
-            <p class ='bank'>Name of the bank / Type of bank account</p>
-            <div class="pay-card">
-                <img src="../../assets/images/credit-card.svg" alt="">
-                <a href = '#'>8380 2880 8028 8791 7435</a>
+        <div class="popup-body">
+            <div class="tabs">
+                <button class="tab active" data-tab="login">Вход</button>
+                <button class="tab" data-tab="register">Регистрация</button>
             </div>
-            <p class ='lorem'>Legal information and lorem ipsum dolor sit amet,
-                consectetur adipiscing elit. Maecenas a ipsum at
-                libero sagittis dignissim sed ac diam. Praesent
-                ultrices maximus tortor et vulputate. Interdum
-                et malesuada fames ac ante ipsum primis in faucibus.
-            </p>
+            <form id="loginForm" class="form active">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+
+            <!-- Форма Регистрации -->
+            <form id="registerForm" class="form">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
         </div>
     </div>
-</div>
 
-<footer>
-    <div class="footer-content" id = 'footer'>
-        <div class="contacts">
-            <h3>For questions and suggestions</h3>
-            <a href="mailto:email@shelter.com" class="icon-link">
-                <img src="../../assets/icons/icon-email.svg" alt="">
-                <p>email@shelter.com</p>
-            </a>
-            <a href='tel:+13674567554' class="icon-link">
-                <img src="../../assets/icons/icon-phone.svg" alt="">
-                <p>+13 674 567 75 54</p>
-            </a>
-        </div>
-        <div class="locations">
-            <h3>We are waiting for your visit</h3>
-            <a target="_blank" href = 'https://www.google.com/maps/place/Central+St,+Boston,+MA,+США/@42.3588439,-71.0555165,17z/data=!3m1!4b1!4m6!3m5!1s0x89e370865345ba21:0x44f6c81aa9436fb7!8m2!3d42.3588439!4d-71.0529416!16s%2Fg%2F1tfvj6dm?entry=ttu' class = 'icon-link'>
-                <img src="../../assets/icons/icon-marker.svg" alt="">
-                <p>1 Central Street, Boston (entrance from the store)</p>
-            </a>
-            <a target="_blank" href = 'https://www.google.com/maps/search/london+central+park/@49.4289566,14.7279047,4z/data=!3m1!4b1?entry=ttu' class = "icon-link">
-                <img src="../../assets/icons/icon-marker.svg" alt="">
-                <p class = 'london'>18 South Park, London </p>
-            </a>
-        </div>
+    <script defer src='auth.js'></script>
+    <script defer src='donations.js'></script>
+    <script defer src='script.js'></script>
+    <script defer src='menu.js'></script>
 
-        <div class="footer-puppy">
-            <img src="../../assets/images/footer-puppy.png" alt="">
-        </div>
-    </div>
-</footer>
-
-
-<div id="overlay"></div>
-
-<div class="popup" id="popup">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="tabs">
-            <button class="tab active" data-tab="login">Вход</button>
-            <button class="tab" data-tab="register">Регистрация</button>
-        </div>
-        <form id="loginForm" class="form active">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Пароль" required>
-            <button type="submit">Войти</button>
-        </form>
-
-        <!-- Форма Регистрации -->
-        <form id="registerForm" class="form">
-            <input type="text" placeholder="Имя" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Пароль" required>
-            <button type="submit">Зарегистрироваться</button>
-        </form>
-    </div>
-</div>
-
-<!-- 
-<div class="popup" id="katrine">
-    <div class="popup-close">
-        <button >X</button>
-    </div>
-    <div class="popup-body">
-        <div class="popup-image">
-            <img src="../../assets/images/pets-katrine.png" alt="">
-        </div>
-        <div class="popup-text">
-            <h3>Katrine</h3>
-            <h4>Cat - British Shorthair</h4>
-            <p>Katrine is a gentle 6 months old British Shorthair with a calm and loving personality. She loves curling up in cozy spots and will happily keep you company during quiet evenings.</p>
-            <ul class="popup-list">
-                <li><a><strong>Age:</strong> 6 months</a></li>
-                <li><a><strong>Inoculations:</strong> up to date</a></li>
-                <li><a><strong>Diseases:</strong> none</a></li>
-                <li><a><strong>Parasites:</strong> none</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<div class="popup" id="woody">
-<div class="popup-close">
-    <button >X</button>
-</div>
-<div class="popup-body">
-    <div class="popup-image">
-        <img src="../../assets/images/pets-woody.png" alt="">
-    </div>
-    <div class="popup-text">
-        <h3>Woody</h3>
-        <h4>Dog - Golden Retriever</h4>
-        <p>Woody is a friendly 1-year-old Golden Retriever with a playful spirit and a heart full of love. He enjoys long walks and never says no to a good belly rub.</p>
-        <ul class="popup-list">
-            <li><a><strong>Age:</strong> 1 year</a></li>
-            <li><a><strong>Inoculations:</strong> up to date</a></li>
-            <li><a><strong>Diseases:</strong> none</a></li>
-            <li><a><strong>Parasites:</strong> none</a></li>
-        </ul>
-    </div>
-</div>
-</div>
-
-<div class="popup" id="sophia">
-<div class="popup-close">
-    <button >X</button>
-</div>
-<div class="popup-body">
-    <div class="popup-image">
-        <img src="../../assets/images/pets-sophia.png" alt="">
-    </div>
-    <div class="popup-text">
-        <h3>Sophia</h3>
-        <h4>Dog - Shih Tzu</h4>
-        <p>Sophia is a cuddly 4-month-old Shih Tzu with a playful and curious nature. She enjoys being carried around and loves snuggling up on your lap.</p>
-        <ul class="popup-list">
-            <li><a><strong>Age:</strong> 4 months</a></li>
-            <li><a><strong>Inoculations:</strong> up to date</a></li>
-            <li><a><strong>Diseases:</strong> none</a></li>
-            <li><a><strong>Parasites:</strong> none</a></li>
-        </ul>
-    </div>
-</div>
-</div>
-
-<div class="popup" id="timmy">
-<div class="popup-close">
-    <button >X</button>
-</div>
-<div class="popup-body">
-    <div class="popup-image">
-        <img src="../../assets/images/pets-timmy.png" alt="">
-    </div>
-    <div class="popup-text">
-        <h3>Timmy</h3>
-        <h4>Cat - British Shorthair</h4>
-        <p>Timmy is a relaxed 8-month-old British Shorthair who loves lounging in the sun and watching the world go by. He is perfect for anyone looking for a calm and easygoing companion.</p>
-        <ul class="popup-list">
-            <li><a><strong>Age:</strong> 8 months</a></li>
-            <li><a><strong>Inoculations:</strong> up to date</a></li>
-            <li><a><strong>Diseases:</strong> none</a></li>
-            <li><a><strong>Parasites:</strong> none</a></li>
-        </ul>
-    </div>
-</div>
-</div>
-
-<div class="popup" id="charly">
-<div class="popup-close">
-    <button >X</button>
-</div>
-<div class="popup-body">
-    <div class="popup-image">
-        <img src="../../assets/images/pets-charly.png" alt="">
-    </div>
-    <div class="popup-text">
-        <h3>Charly</h3>
-        <h4>Dog - Beagle</h4>
-        <p>Charly is a curious 2-year-old Beagle who loves exploring and sniffing out new adventures. With his energetic personality, he's always ready for a long walk or a play session.</p>
-        <ul class="popup-list">
-            <li><a><strong>Age:</strong> 2 years</a></li>
-            <li><a><strong>Inoculations:</strong> up to date</a></li>
-            <li><a><strong>Diseases:</strong> none</a></li>
-            <li><a><strong>Parasites:</strong> none</a></li>
-        </ul>
-    </div>
-</div>
-</div>
-
-<div class="popup" id="scarlett">
-<div class="popup-close">
-    <button >X</button>
-</div>
-<div class="popup-body">
-    <div class="popup-image">
-        <img src="../../assets/images/pets-scarlet.png" alt="">
-    </div>
-    <div class="popup-text">
-        <h3>Scarlett</h3>
-        <h4>Dog - Jack Russell Terrier</h4>
-        <p>Scarlett is an energetic 5-month-old Jack Russell Terrier who loves running and playing. She would thrive in an active household where she can burn off all her energy.</p>
-        <ul class="popup-list">
-            <li><a><strong>Age:</strong> 5 months</a></li>
-            <li><a><strong>Inoculations:</strong> up to date</a></li>
-            <li><a><strong>Diseases:</strong> none</a></li>
-            <li><a><strong>Parasites:</strong> none</a></li>
-        </ul>
-    </div>
-</div>
-</div>
-
-<div class="popup" id="freddie">
-<div class="popup-close">
-    <button >X</button>
-</div>
-<div class="popup-body">
-    <div class="popup-image">
-        <img src="../../assets/images/pets-freddie.png" alt="">
-    </div>
-    <div class="popup-text">
-        <h3>Freddie</h3>
-        <h4>Cat - Scottish Fold</h4>
-        <p>Freddie is a playful 7-month-old Scottish Fold with a love for exploring every corner of the house. His cute folded ears and inquisitive nature make him a delight to be around.</p>
-        <ul class="popup-list">
-            <li><a><strong>Age:</strong> 7 months</a></li>
-            <li><a><strong>Inoculations:</strong> up to date</a></li>
-            <li><a><strong>Diseases:</strong> none</a></li>
-            <li><a><strong>Parasites:</strong> none</a></li>
-        </ul>
-    </div>
-</div>
-</div> -->
-<script defer src = 'auth.js'></script>
-<script defer src = 'script.js'></script>
-<script defer src = 'menu.js'></script>
 </body>
+
 </html>
