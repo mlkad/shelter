@@ -1,12 +1,14 @@
 
+const closePopupBtn = document.querySelector(".donations-popup .popup-close");
+
 document.querySelectorAll(".pay-card").forEach((card) => {
   card.addEventListener("click", () => {
-    document.querySelector(".donations-popup").classList.remove("hidden");
+    document.querySelector(".donations-popup").style.display = 'block';
   });
 });
 
-document.querySelector(".close-popup").addEventListener("click", () => {
-  document.querySelector(".donations-popup").classList.add("hidden");
+closePopupBtn.addEventListener("click", () => {
+  document.querySelector(".donations-popup").style.display = 'none';
 });
 
 document.getElementById("donationsForm").addEventListener("submit", async (event) => {

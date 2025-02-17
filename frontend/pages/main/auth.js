@@ -4,9 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const closePopupBtn = document.querySelector(".popup-close");
   const tabs = document.querySelectorAll(".tab");
   const forms = document.querySelectorAll(".form");
-
+  const profileBtn = document.querySelector(".profile");
   const registerForm = document.getElementById("registerForm");
   const loginForm = document.getElementById("loginForm");
+  const logOut = document.querySelector(".log-out");
+  const popupProfile = document.querySelector(".popup-profile");
+  let userName = document.querySelector('.user-name');
+
+  function checkAuthStatus() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      openPopupBtn.style.display = 'none'; // скрыть кнопку login
+      profileBtn.style.display = 'block'; // показать кнопку profile
+    } else {
+      openPopupBtn.style.display = 'block'; // показать кнопку login
+      profileBtn.style.display = 'none'; // скрыть кнопку profile
+    }
+  }
 
   openPopupBtn.addEventListener("click", () => {
     popup.classList.add("active");
@@ -71,11 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
-
+let name;
   registerForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    const name = registerForm.querySelector("input[type='text']").value;
+  name = registerForm.querySelector("input[type='text']").value;
+  console.log(registerForm.querySelector("input[type='text']"));
+  console.log(name);
     const email = registerForm.querySelector("input[type='email']").value;
     const password = registerForm.querySelector("input[type='password']").value;
 
@@ -89,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  loginForm.addEventListener("submit", async (event) => {
+loginForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const email = loginForm.querySelector("input[type='email']").value;
@@ -99,12 +115,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const result = await sendData("http://localhost:8081/login", userData);
 
     if (result) {
-      authToken = result.token; 
-      console.log("Токен:", authToken); 
+      const authToken = result.token;
+      console.log("Токен:", authToken);
 
       alert("Вход выполнен успешно!");
       localStorage.setItem("token", authToken);
       popup.classList.remove("active");
+      checkAuthStatus(); // Проверить статус авторизации
     }
   });
+
+  // Функция для выхода
+  profileBtn.addEventListener("click", () => {
+    popupProfile.classList.add("active");
+    popupProfile.style.display = 'block';
+    userName.textContent = name;
+  });
+
+  logOut.addEventListener("click", () => {
+    localStorage.removeItem("token"); // Удалить токен
+    checkAuthStatus(); // Обновить кнопки
+  });
+  // Проверить статус авторизации при загрузке страницы
+  checkAuthStatus();
 });

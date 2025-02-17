@@ -48,6 +48,9 @@
                         <li class="menu-item">
                             <a href="#" class="menu-link login">Login</a>
                         </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link profile">Profile</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -202,21 +205,24 @@
 
 
     <div class="donations-popup hidden">
-      <div class="donations-body">
-        <h3>Пожертвовать</h3>
-        <form id="donationsForm">
-          <label for="donation-amount">Сумма:</label>
-          <input type="number" id="donation-amount" name="amount" min="1" required />
-    
-          <label for="donation-message">Тип доната:</label>
-          <textarea id="donation-message" name="message"></textarea>
-    
-          <button type="submit">Отправить</button>
-          <button type="button" class="close-popup">Закрыть</button>
-        </form>
-      </div>
+        <div class="popup-close">
+            <button>X</button>
+        </div>
+        <div class="donations-body">
+            <h3>Пожертвовать</h3>
+            <form id="donationsForm">
+                <label for="donation-amount">Сумма:</label>
+                <input type="number" id="donation-amount" name="amount" min="1" required />
+
+                <label for="donation-message">Тип доната:</label>
+                <textarea id="donation-message" name="message"></textarea>
+
+                <button type="submit">Отправить</button>
+                <button type="button" class="close-popup">Закрыть</button>
+            </form>
+        </div>
     </div>
-    
+
     <footer>
         <div class="footer-content" id='footer'>
             <div class="contacts">
@@ -277,6 +283,19 @@
                 <input type="password" placeholder="Пароль" required>
                 <button type="submit">Зарегистрироваться</button>
             </form>
+        </div>
+    </div>
+
+    <div class="popup-profile" id="popup">
+        <div class="popup-close">
+            <button>X</button>
+        </div>
+
+        <div class="popup-body">
+            <div class="popup-body-profile">
+                <h3 class='user-name'> user name </h3>
+                <button class='button log-out'> log out </button>
+            </div>
         </div>
     </div>
 
