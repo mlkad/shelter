@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="../../assets/images/favicon.ico" rel="icon" type="image/x-icon">
+    <!-- ФАВИКОН БУДЕТ ОТОБРАЖАТЬСЯ В ГУГЛ ХРОМ -->
+    <title>Main</title>
+
+</head>
+
+<body>
+
+    <header class='header'>
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href='../main/index.html'>Cozy House</a>
+                    <h1>Shelter for pets in Boston</h1>
+                </div>
+
+                <div class="overlay" id="overlay"></div>
+
+                <div class="burger" id="burger">
+                    <hr>
+                    <hr>
+                    <hr>
+                </div>
+
+                <nav class="menu" id="menu">
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <a href="../main/index.html" class="menu-link">About the shelter</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href='../pets/index.html' class="menu-link-our">Our pets</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="../main/index.html#help" class="menu-link">Help the shelter</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#footer" class="menu-link">Contacts</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" class="menu-link login">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="pets">
+        <div class="pets-content">
+            <h3>Our friends who <br>are looking for a house</h3>
+            <div class="cards-container"></div>
+            <div class="navigation">
+                <!-- <button id="first" class="able-arrow">&lt;&lt;</button> -->
+                <button id="prev" class="able-arrow">&lt;</button>
+                <button id="page-number" class="page-number">1</button>
+                <button id="next" class="able-arrow">&gt;</button>
+                <!-- <button id="last" class="able-arrow">&gt;&gt;</button> -->
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer-content" id='footer'>
+            <div class="contacts">
+                <h3>For questions and suggestions</h3>
+                <a href="mailto:email@shelter.com" class="icon-link">
+                    <img src="../../assets/icons/icon-email.svg" alt="">
+                    <p>email@shelter.com</p>
+                </a>
+                <a href='tel:+13674567554' class="icon-link">
+                    <img src="../../assets/icons/icon-phone.svg" alt="">
+                    <p>+13 674 567 75 54</p>
+                </a>
+            </div>
+            <div class="locations">
+                <h3>We are waiting for your visit</h3>
+                <a target="_blank"
+                    href='https://www.google.com/maps/place/Central+St,+Boston,+MA,+США/@42.3588439,-71.0555165,17z/data=!3m1!4b1!4m6!3m5!1s0x89e370865345ba21:0x44f6c81aa9436fb7!8m2!3d42.3588439!4d-71.0529416!16s%2Fg%2F1tfvj6dm?entry=ttu'
+                    class='icon-link'>
+                    <img src="../../assets/icons/icon-marker.svg" alt="">
+                    <p>1 Central Street, Boston (entrance from the store)</p>
+                </a>
+                <a target="_blank"
+                    href='https://www.google.com/maps/search/london+central+park/@49.4289566,14.7279047,4z/data=!3m1!4b1?entry=ttu'
+                    class="icon-link">
+                    <img src="../../assets/icons/icon-marker.svg" alt="">
+                    <p class='london'>18 South Park, London </p>
+                </a>
+            </div>
+            <div class="footer-puppy">
+                <img src="../../assets/images/footer-puppy.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+
+    <div class="popup" id="popup">
+        <div class="popup-close">
+            <button >X</button>
+        </div>
+        <div class="popup-body">
+            <div class="tabs">
+                <button class="tab active" data-tab="login">Вход</button>
+                <button class="tab" data-tab="register">Регистрация</button>
+            </div>
+            <form id="loginForm" class="form active">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Войти</button>
+            </form>
+    
+            <!-- Форма Регистрации -->
+            <form id="registerForm" class="form">
+                <input type="text" placeholder="Имя" required>
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Пароль" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script defer src = 'auth.js'></script>
+    <script src='pets.js'></script>
+    <script src='menu.js'></script>
+</body>
+
+</html>
